@@ -46,9 +46,11 @@ activate :livereload
 #   @which_fake_page = "Rendering a fake page with a variable"
 # end
 
-###
-# Helpers
-###
+helpers do
+  def api_base
+    ENV['API_BASE'] ||= 'http://localhost:5000'
+  end
+end
 
 # Automatic image dimensions on image_tag helper
 # activate :automatic_image_sizes

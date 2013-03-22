@@ -1,1 +1,1 @@
-window.Diet.Application = Ember.Application.create
+window.Diet.App = Ember.Application.create()

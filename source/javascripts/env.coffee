@@ -1,6 +1,6 @@
 #= require handlebars
 #= require vendor/ember
 
-#= require_tree ./templates
-
 window.Diet = {}
+
+window.Diet.api_base = $('meta[name=api-base]').attr('content')

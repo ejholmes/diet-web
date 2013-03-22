@@ -1,7 +1,8 @@
 #= require ./env
 
-#$ ->
-  #$.ajax
-    #url: 'http://localhost:5000/items'
-    #xhrFields:
-      #withCredentials: true
+#= require_tree ./models
+#= require_tree ./controllers
+#= require_tree ./views
+#= require_tree ./templates
+
+#= require ./diet
