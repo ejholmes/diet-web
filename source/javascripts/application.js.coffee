@@ -1,2 +1,2 @@
 $ ->
-  $.get 'http://localhost:9393/items'
+  $.get 'http://api.rides.io/items'
