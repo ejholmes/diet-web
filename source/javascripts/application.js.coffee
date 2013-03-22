@@ -1,5 +1,4 @@
-#= require vendor/handlebars
-#= require vendor/ember
+#= require ./env
 
 #$ ->
   #$.ajax

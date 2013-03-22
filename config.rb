@@ -2,6 +2,8 @@ require File.expand_path('../app.rb', __FILE__)
 
 use App
 
+HandlebarsAssets::Config.ember = true
+Sprockets.register_engine '.hamlbars', HandlebarsAssets::TiltHandlebars
 
 #Markdown
 set :markdown_engine, :redcarpet
