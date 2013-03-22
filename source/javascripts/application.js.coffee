@@ -1,5 +1,8 @@
-$ ->
-  $.ajax
-    url: 'http://api.rides.io/items'
-    xhrFields:
-      withCredentials: true
+#= require vendor/handlebars
+#= require vendor/ember
+
+#$ ->
+  #$.ajax
+    #url: 'http://localhost:5000/items'
+    #xhrFields:
+      #withCredentials: true

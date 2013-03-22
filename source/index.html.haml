@@ -1,1 +1,23 @@
-Foobar
+#app.clearfix
+  #sidebar
+    %ul#feeds
+    #subscribe
+      %a{:href => '#'}
+        %i.icon-plus
+        Subscribe
+      %input{:type => 'text', :placeholder => 'e.g. http://feeds.feedburner.com/37signals'}
+    %a#feedback{:href => 'mailto:eric@ejholmes.net', target: '_blank'}
+      %i.icon-comment
+      Feedback
+
+  #main
+    #controls
+      .btn-group
+        %a.btn.active All
+        %a.btn Unread
+
+      .btn-group
+        %a.button
+          %i.icon-check
+          Mark all read
+    %ul#items
