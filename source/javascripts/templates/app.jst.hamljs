@@ -6,15 +6,4 @@
     Feedback
 #main
   #controls
-    .btn-group
-      %a.btn.active{href: '#'} All
-      %a.btn{href: '#'} Unread
-
-    .btn-group
-      %a.btn{href: '#'} Unsubscribe
-
-    .btn-group
-      %a.btn{href: '#'}
-        %i.icon-check>
-        Mark all read
   %ul#items
