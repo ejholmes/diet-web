@@ -4,6 +4,15 @@
   %a#feedback{href: 'mailto:eric@ejholmes.net', target: '_blank'}
     %i.icon-comment>
     Feedback
+
 #main
   #controls
+    .btn-group
+      %a.btn.all{href: '#'} All
+      %a.btn.unread{href: '#'} Unread
+
+    .btn-group
+      %a.btn.mark-all-read{href: '#'}
+        %i.icon-check>
+        Mark all read
   %ul#items
