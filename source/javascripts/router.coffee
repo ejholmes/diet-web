@@ -11,6 +11,8 @@ class @Diet.Router extends Backbone.Router
     app.feeds = new window.Diet.Collections.Feeds
     app.items = new window.Diet.Collections.Items
 
+    app.items.feeds = app.feeds
+
     app.view = new window.Diet.Views.App
     app.view.render()
 
