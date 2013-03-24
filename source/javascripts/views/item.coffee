@@ -22,8 +22,8 @@ class @Diet.Views.Item extends @Diet.View
 
   toggle: (e) ->
     e.preventDefault()
-    @model.toggleActive(@model)
-    @model.read() if @model.get('active')
+    @model.toggleActive()
+    @model.read()
 
   toggleDescription: ->
     if @model.get('active')
