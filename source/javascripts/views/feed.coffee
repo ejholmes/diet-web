@@ -28,4 +28,4 @@ class @Diet.Views.Feed extends @Diet.View
 
   show: (e) ->
     e.preventDefault()
-    @model.activate()
+    window.app.router.navigate("feed/#{@model.get('id')}", trigger: true)

@@ -14,9 +14,6 @@ class @Diet.App
 
     @items.feeds = @feeds
 
-    @feeds.on 'change:active', (feed) =>
-      @items.fetch(reset: true, data: { subscription: feed.get('id') }) if feed.get('active')
-
     @view = new window.Diet.Views.App(app: this)
     @view.render()
 
