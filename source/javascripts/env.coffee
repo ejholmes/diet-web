@@ -1,6 +1,10 @@
-#= require handlebars
-#= require vendor/ember
-#= require vendor/ember-data
+require.config
+  baseUrl: 'javascripts'
+
+  paths:
+    underscore: 'vendor/underscore'
+    backbone: 'vendor/backbone'
+    templates: 'templates'
 
 @Diet =
   api_base: $('meta[name=api-base]').attr('content')
