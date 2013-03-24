@@ -1,4 +1,5 @@
 %span.title
+  %img{src: feed.favicon}>
   = feed.title
   &nbsp;&raquo;&nbsp;
   = title
