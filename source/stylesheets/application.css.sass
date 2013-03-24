@@ -5,8 +5,17 @@
 // Bourbon for css3 mixins
 @import bourbon
 
-body.loading #main
-  opacity: 0.2
+body
+  #main .spinner
+    display: none
+    margin-left: 20px
+
+  &.loading #main
+    #items
+      opacity: 0.2
+
+    .spinner
+      display: inline
 
 .messages
   p.flash

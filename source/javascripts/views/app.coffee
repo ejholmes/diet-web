@@ -9,6 +9,14 @@ class @Diet.Views.App extends @Diet.View
     @items    = new window.Diet.Views.Items(collection: @options.app.items)
     @controls = new window.Diet.Views.Controls(app: @options.app)
 
+    $body = $('body')
+
+    @listenTo @options.app.items, 'request', ->
+      $body.addClass('loading')
+
+    @listenTo @options.app.items, 'sync', ->
+      $body.removeClass('loading')
+
   render: ->
     @$el.html @template('app')
     @feeds.setElement @$('#feeds')

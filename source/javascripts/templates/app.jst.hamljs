@@ -15,4 +15,6 @@
       %a.btn.mark-all-read{href: '#'}
         %i.icon-check>
         Mark all read
+
+    %img.spinner{src: '/images/spinner.gif'}
   %ul#items
