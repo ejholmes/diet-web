@@ -1,7 +1,2 @@
-#= require vendor/require
-#= require ./env
-
-require [
-  'underscore'
-], (_) ->
-  console.log _
+#= require haml
+#= require app

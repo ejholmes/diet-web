@@ -44,8 +44,8 @@ activate :livereload
 # end
 
 helpers do
-  def api_base
-    ENV['API_BASE'] ||= 'http://localhost:5000'
+  def api_endpoint
+    ENV['API_ENDPOINT'] ||= 'http://localhost:5000'
   end
 end
 

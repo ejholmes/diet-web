@@ -1,14 +1,16 @@
-require [
-  'underscore'
-  'backbone'
-], (_, Backbone) ->
-  AppRouter = Backbone.Router.extend
-    routes:
-      'items': 'items'
+#= require lodash
+#= require backbone
 
-    items: ->
-      console.log 'foo'
+class @Diet.Router extends Backbone.Router
+  routes:
+    '' : 'index'
 
-  initialize: ->
-    router = new AppRouter
-    Backbone.history.start()
+  index: ->
+    app = window.app
+
+    app.feeds = new window.Diet.Collections.Feeds
+
+    app.view = new window.Diet.Views.App
+    app.view.render()
+
+    app.feeds.fetch(reset: true)

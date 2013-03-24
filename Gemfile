@@ -7,6 +7,7 @@ gem 'middleman-livereload', '~> 3.0.0'
 gem 'middleman-sync', '~> 3.0.7'
 gem 'redcarpet', '~> 2.1.1'
 gem 'coffee-filter', '~> 0.1.1'
+gem 'haml-sprockets', github: 'ejholmes/haml-sprockets'
 
 # Assets.
 gem 'sass',          '~> 3.2.5'

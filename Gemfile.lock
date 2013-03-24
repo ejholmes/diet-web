@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/ejholmes/haml-sprockets.git
+  revision: de8fad53e8a944f3b4d88a508a5df25c78d21f9a
+  specs:
+    haml-sprockets (0.0.8)
+      execjs (~> 1.4.0)
+      sprockets (~> 2.1)
+      tilt (~> 1.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -167,6 +176,7 @@ DEPENDENCIES
   bourbon (~> 3.0.1)
   coffee-filter (~> 0.1.1)
   coffee-script (~> 2.2.0)
+  haml-sprockets!
   middleman (~> 3.0.5)
   middleman-favicon-maker (~> 3.0.0)
   middleman-livereload (~> 3.0.0)

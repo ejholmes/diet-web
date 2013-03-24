@@ -12,14 +12,14 @@
     %meta{:content => "RSS aggregator and reader.", :name => "description"}
     
     %meta{:content => "width=device-width", :name => "viewport"}
-    %meta{:content => api_base, :name => 'api-base'}
+    %meta{:content => api_endpoint, :name => 'api_endpoint'}
     
     -#Favicon Options:
     -#Update favicon_base.png in /source and middleman-favicon-maker will generate all the versions you need on 'middleman build'
     -#OR, place favicon.ico and apple-touch-icon.png in /source and deactivate :favicon_maker in config.rb
     
     
-    = javascript_include_tag 'vendor/modernizr-2.6.1.min'
+    = javascript_include_tag 'modernizr-2.6.1.min'
     = stylesheet_link_tag 'application'
   %body
     /[if lt IE 7] <p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p>
@@ -28,7 +28,7 @@
     
     = javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"
     :javascript
-      window.jQuery || document.write('<script src="javascripts/vendor/jquery-1.8.0.min.js"><\/script>')
+      window.jQuery || document.write('<script src="javascripts/jquery-1.8.0.min.js"><\/script>')
     = javascript_include_tag 'application'
     
     :javascript

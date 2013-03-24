@@ -1,7 +1,6 @@
-require [
-  'underscore',
-  'backbone'
-], (_, Backbone) ->
-  Feed = Backbone.Model.extend()
+#= require lodash
+#= require backbone
 
-  Feed
+class @Diet.Models.Feed extends @Diet.Model
+  defaults:
+    active: false
