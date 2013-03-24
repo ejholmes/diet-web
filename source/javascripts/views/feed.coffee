@@ -11,4 +11,5 @@ class @Diet.Views.Feed extends @Diet.View
   render: ->
     @$el.html @template('feed', @model.toJSON())
     @$el.toggleClass('active', @model.get('active'))
+    @$('.badge').hide() if @model.get('unread') == 0
     this
