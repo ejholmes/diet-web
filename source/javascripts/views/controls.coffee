@@ -7,14 +7,20 @@ class @Diet.Views.Controls extends @Diet.View
     'click a.unread'        : 'unread'
     'click a.mark-all-read' : 'readAll'
 
+  initialize: ->
+    @app = @options.app
+
   all: (e) ->
     e.preventDefault()
-    window.app.router.navigate('', trigger: true)
+    @navigate '', trigger: true
 
   unread: (e) ->
     e.preventDefault()
-    window.app.router.navigate('unread', trigger: true)
+    @navigate 'unread', trigger: true
 
   readAll: (e) ->
     e.preventDefault()
-    window.app.items.readAll()
+    @app.items.readAll()
+
+  navigate: ->
+    @app.router.navigate.apply @app.router, arguments

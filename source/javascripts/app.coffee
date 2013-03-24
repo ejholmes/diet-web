@@ -7,15 +7,15 @@
 
 class @Diet.App
   initialize: ->
+    @router = new window.Diet.Router
+
     @feeds = new window.Diet.Collections.Feeds
     @items = new window.Diet.Collections.Items
 
     @items.feeds = @feeds
 
-    @view = new window.Diet.Views.App
+    @view = new window.Diet.Views.App(app: this)
     @view.render()
-
-    @router = new window.Diet.Router
 
     Backbone.history.start()
 
