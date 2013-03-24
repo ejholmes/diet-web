@@ -23,11 +23,12 @@ class @Diet.Views.Item extends @Diet.View
   toggle: (e) ->
     e.preventDefault()
     @model.collection.toggle(@model)
+    @model.read() if @model.get('active')
 
   toggleDescription: ->
     if @model.get('active')
-      @model.fetch success: =>
-        @$description.html(@model.get('description'))
+      #@model.fetch success: =>
+        #@$description.html(@model.get('description'))
     else
       @$description.html('')
 

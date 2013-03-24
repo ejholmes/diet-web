@@ -5,6 +5,7 @@
 ajax = Backbone.ajax
 Backbone.ajax = (request) ->
   request.xhrFields = withCredentials: true
+  request.contentType = 'application/json'
   ajax(request)
 
 @Diet =
