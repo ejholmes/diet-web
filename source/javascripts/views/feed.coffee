@@ -5,6 +5,9 @@ class @Diet.Views.Feed extends @Diet.View
   tagName: 'li'
   className: 'feed'
 
+  events:
+    'click' : 'show'
+
   initialize: ->
     @listenTo @model, 'change:active', @renderActive
     @listenTo @model, 'change:unread', @renderUnread
@@ -22,3 +25,7 @@ class @Diet.Views.Feed extends @Diet.View
   renderUnread: ->
     @$badge.html(@model.get('unread'))
     @$badge.hide() if @model.get('unread') == 0
+
+  show: (e) ->
+    e.preventDefault()
+    @model.activate()
