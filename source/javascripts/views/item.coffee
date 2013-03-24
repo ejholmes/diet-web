@@ -9,26 +9,24 @@ class @Diet.Views.Item extends @Diet.View
     'click .title' : 'toggle'
 
   initialize: ->
-    @listenTo @model, 'change', @render
-    @listenTo @model, 'change:active', @toggleDescription
+    @listenTo @model, 'change:active', @renderActive
+    @listenTo @model, 'change:read', @renderRead
 
   render: ->
     @$el.html @template('item', @model.toJSON())
-    @$el.toggleClass 'active',  @model.get('active')
+    @$description = @$('.description')
+    @renderActive()
+    @renderRead()
+    this
+
+  renderActive: ->
+    @$el.toggleClass 'active', @model.get('active')
+
+  renderRead: ->
     @$el.toggleClass 'read',    @model.get('read')
     @$el.toggleClass 'unread', !@model.get('read')
-    @$description = @$('.description')
-    this
 
   toggle: (e) ->
     e.preventDefault()
     @model.toggleActive()
     @model.read()
-
-  toggleDescription: ->
-    if @model.get('active')
-      #@model.fetch success: =>
-        #@$description.html(@model.get('description'))
-    else
-      @$description.html('')
-

@@ -6,10 +6,19 @@ class @Diet.Views.Feed extends @Diet.View
   className: 'feed'
 
   initialize: ->
-    @listenTo @model, 'change', @render
+    @listenTo @model, 'change:active', @renderActive
+    @listenTo @model, 'change:unread', @renderUnread
 
   render: ->
     @$el.html @template('feed', @model.toJSON())
-    @$el.toggleClass('active', @model.get('active'))
-    @$('.badge').hide() if @model.get('unread') == 0
+    @$badge = @$('.badge')
+    @renderActive()
+    @renderUnread()
     this
+
+  renderActive: ->
+    @$el.toggleClass('active', @model.get('active'))
+
+  renderUnread: ->
+    @$badge.html(@model.get('unread'))
+    @$badge.hide() if @model.get('unread') == 0
