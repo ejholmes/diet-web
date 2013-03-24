@@ -11,6 +11,15 @@ class @Diet.Models.Item extends @Diet.Model
     else
       super attr
 
+  # Public: Toggle the active state on this model (also sets all other models
+  # in the collection to active=false).
+  toggleActive: ->
+    active = @get('active')
+    _.invoke @collection.models, 'set', 'active', false
+    @set('active', !active)
+
+  # Public: Mark this item as read (if it is unread) and decrement the feeds
+  # unread count by 1.
   read: ->
     return if @get('read')
     @set('read', true)
