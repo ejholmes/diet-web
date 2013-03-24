@@ -1,6 +1,8 @@
 #= require handlebars
 #= require vendor/ember
+#= require vendor/ember-data
 
-window.Diet = {}
+@Diet =
+  api_base: $('meta[name=api-base]').attr('content')
 
-window.Diet.api_base = $('meta[name=api-base]').attr('content')
+$.ajaxSetup xhrFields: withCredentials: true
