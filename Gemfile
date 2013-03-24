@@ -13,7 +13,7 @@ gem 'haml-sprockets', github: 'ejholmes/haml-sprockets'
 gem 'sass',          '~> 3.2.5'
 gem 'coffee-script', '~> 2.2.0'
 gem 'bourbon',       '~> 3.0.1'
-gem 'bootstrap-sass', '~> 2.1.1'
+gem 'bootstrap-sass', '~> 2.2.2.0'
 
 # For custom middleware.
 gem 'rack-contrib'
