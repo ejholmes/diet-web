@@ -8,6 +8,30 @@ Backbone.ajax = (request) ->
   request.contentType = 'application/json'
   ajax(request)
 
+class Model extends Backbone.Model
+
+class View extends Backbone.View
+  # Public: Render a hamljs view.
+  template: (name, context = {}) ->
+    window.JST["templates/#{name}"](context)
+
+class CollectionView extends View
+  initialize: ->
+    _.bindAll this, 'addOne'
+    @listenTo @collection, 'reset', @render
+
+  addOne: (model) ->
+    view = new @childClass(model: model)
+    @$fragment.appendChild view.render().$el[0]
+
+  render: ->
+    @$fragment = document.createDocumentFragment()
+    _.each @collection.models, @addOne
+    @$el.html(@$fragment)
+    this
+
+class Collection extends Backbone.Collection
+
 @Diet =
   # Holds all models, collections and views.
   Models:      { }
@@ -15,17 +39,15 @@ Backbone.ajax = (request) ->
   Views:       { }
   
   # Base model for all models to extend.
-  Model:      Backbone.Model.extend()
+  Model: Model
 
   # Base view for all views to extend.
-  View:       Backbone.View.extend
+  View: View
 
-    # Public: Render a hamljs view.
-    template: (name, context = {}) ->
-      window.JST["templates/#{name}"](context)
+  CollectionView: CollectionView
 
   # Base collection for all collections to extend.
-  Collection: Backbone.Collection.extend()
+  Collection: Collection
 
   # Where config is stored.
   config:
