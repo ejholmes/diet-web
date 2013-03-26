@@ -19,5 +19,6 @@ class @Diet.App
 
     Backbone.history.start()
 
-@app = new @Diet.App
-@app.initialize()
+$ =>
+  @app = new @Diet.App
+  @app.initialize()
