@@ -1,4 +1,0 @@
-%a{href: '#', title: title}
-  %img{src: favicon}>
-  = title
-%span.badge.badge-info= unread

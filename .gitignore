@@ -1,5 +1,1 @@
-*.DS_Store
-*.scssc
-.sass-cache/*
-
-build/
+node_modules
