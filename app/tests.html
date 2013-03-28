@@ -7,22 +7,5 @@
 <body>
   <div id="mocha"></div>
   <script src="/javascripts/tests.js"></script>
-  <script>
-    require(['chai', 'mocha', 'sinon', 'sinon-chai'], function(chai, mocha, sinon, sinonChai){
-      // Chai
-      expect = chai.expect;
-      chai.use(sinonChai)
-
-      /*globals mocha */
-      mocha.setup('bdd');
-
-      require([
-        'javascripts/models/test.item.js',
-      ], function(require) {
-        mocha.run();
-      });
-
-    });
-  </script>
 </body>
 </html>
