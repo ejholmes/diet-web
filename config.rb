@@ -1,8 +1,6 @@
-require File.expand_path('../app.rb', __FILE__)
-
-use App
-
 set :source, 'app'
+
+set :js_assets_paths, %W[ #{root}/test/javascripts #{root}/test/vendor/javascripts #{root}/test/vendor/stylesheets ]
 
 #Markdown
 set :markdown_engine, :redcarpet
