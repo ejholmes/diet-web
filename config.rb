@@ -2,6 +2,8 @@ require File.expand_path('../app.rb', __FILE__)
 
 use App
 
+set :source, 'app'
+
 #Markdown
 set :markdown_engine, :redcarpet
 
