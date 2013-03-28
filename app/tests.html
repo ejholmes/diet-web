@@ -8,16 +8,12 @@
   <div id="mocha"></div>
   <script src="/javascripts/tests.js"></script>
   <script>
-    require(['chai', 'mocha'], function(chai, mocha){
+    require(['chai', 'mocha', 'sinon', 'sinon-chai'], function(chai, mocha, sinon){
       // Chai
       expect = chai.expect;
 
       /*globals mocha */
       mocha.setup('bdd');
-
-      require.config({
-        baseUrl: 'javascripts'
-      })
 
       require([
         'javascripts/models/test.item.js',

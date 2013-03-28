@@ -3,6 +3,7 @@ require.config
 
   paths:
     jquery: 'jquery-1.8.0.min'
+    sinon: 'sinon-1.6.0'
 
   map: '*':
     underscore: 'lodash'
@@ -13,3 +14,5 @@ require.config
       exports: 'Backbone'
     mocha:
       exports: 'mocha'
+    sinon:
+      exports: 'sinon'
