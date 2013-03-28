@@ -19,4 +19,4 @@ define (require) ->
         expect(@item.get('read')).to.be.true
 
       it 'marks the item as read on the server', ->
-        expect(@item.ajax).to.have.been.called
+        expect(@item.ajax).to.have.been.calledWith url: 'foo/read', type: 'PUT'
