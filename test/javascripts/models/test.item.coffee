@@ -2,13 +2,21 @@ define (require) ->
   Item = require 'models/item'
 
   describe 'Item', ->
+    beforeEach ->
+      @item = new Item
+
     it 'should set defaults', ->
-      item = new Item
-      expect(item.defaults.active).to.be.false
+      expect(@item.defaults.active).to.be.false
 
     describe '.read', ->
+      beforeEach ->
+        @item = new Item
+        @item.url = -> 'foo'
+        @item.ajax = sinon.stub()
+        @item.read()
+
       it 'marks the item as read', ->
-        item = new Item
-        item.url = -> 'foo'
-        item.read()
-        expect(item.get('read')).to.be.true
+        expect(@item.get('read')).to.be.true
+
+      it 'marks the item as read on the server', ->
+        expect(@item.ajax).to.have.been.called

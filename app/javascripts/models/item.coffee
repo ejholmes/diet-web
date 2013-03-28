@@ -1,7 +1,7 @@
 define (require) ->
-  Backbone = require 'backbone'
+  Base = require 'models/base'
 
-  class Item extends Backbone.Model
+  class Item extends Base
     defaults:
       active: false
 
@@ -10,4 +10,4 @@ define (require) ->
     read: ->
       return if @get('read')
       @set('read', true)
-      Backbone.ajax url: "#{@url()}/read", type: 'PUT'
+      @ajax url: "#{@url()}/read", type: 'PUT'
